@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring.mvc.view.prefix: /WEB-INF/jsp/
+spring.mvc.view.suffix: .jsp
+
+spring:
+   rabbitmq:
+      host: 192.168.102.37
+      port: 5672
+      username: guest
+      password: guest
+   datasource:
+    username: root
+    password: b2b123456
+    url: jdbc:mysql://192.168.102.37:3306/abc?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    c3p0.maxPoolSize: 10
+mybatis:
+  mapper-locations: classpath:mappering/UserMapping.xml
+  type-aliases-package: com.ahut.entity
+ 
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ahut.dao.UserMapper">
+ 
+    <resultMap id="BaseResultMap" type="com.ahut.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="userName" />
+    </resultMap>
+ 
+    <select id="user" resultType="com.ahut.entity.User">
+        select * from testS where id = #{id}
+    </select>
+ 	<insert id="insertUser" parameterType="Map" useGeneratedKeys="true">
+ 		insert into testS (name,sex) value (#{a},#{b})
+ 	</insert>
+ 	<insert id="insertUser2"  parameterType="String" useGeneratedKeys="true">
+ 		insert into testS (name,sex) value ("b","b")
+ 	</insert>
+</mapper>
